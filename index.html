@@ -2,13 +2,9 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciene Oliveira - Terapia TRG</title>
-
     <link rel="stylesheet" href="style.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -31,26 +27,38 @@
             Luciene Oliveira
         </div>
 
-        <nav>
+        <!-- MENU DESKTOP -->
+        <nav class="menu-desktop">
             <a href="#inicio">Início</a>
             <a href="#sobre">Sobre</a>
             <a href="#especializacoes">Especializações</a>
             <a href="#planos">Planos</a>
             <a href="#contato">Contato</a>
         </nav>
+
+        <!-- BOTÃO MOBILE -->
+        <div class="menu-btn" onclick="abrirMenu()">☰</div>
+
     </div>
 </header>
+
+<!-- MENU MOBILE LATERAL -->
+<div id="menuMobile" class="menu-mobile">
+    <a href="#inicio" onclick="abrirMenu()">Início</a>
+    <a href="#sobre" onclick="abrirMenu()">Sobre</a>
+    <a href="#especializacoes" onclick="abrirMenu()">Especializações</a>
+    <a href="#planos" onclick="abrirMenu()">Planos</a>
+    <a href="#contato" onclick="abrirMenu()">Contato</a>
+</div>
 
 <section id="inicio" class="banner fade container"> 
     <div>
         <h1>Transforme sua vida com a TRG</h1>
-
         <p>
             A Terapia de Reprocessamento Generativo ajuda a superar ansiedade,
             traumas e desequilíbrios emocionais com acolhimento, segurança e 
             resultados reais.
         </p>
-
         <a href="https://wa.me/558387149152?text=Olá,+quero+agendar+uma+sessão+de+TRG"
            class="btn">Agendar Sessão</a>
     </div>
@@ -87,7 +95,8 @@
 
     </div>
 
-    <img src="imagens/foto2.jpg" alt="Terapeuta">
+    <!-- SEGUNDA IMAGEM DIMINUÍDA -->
+    <img src="imagens/foto2.jpg" alt="Terapeuta" style="width:240px; border-radius:18px; box-shadow:0 8px 28px rgba(0,0,0,0.12);">
 </section>
 
 <section id="especializacoes" class="fade container">
@@ -201,6 +210,12 @@
 
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    function abrirMenu() {
+        const menu = document.getElementById('menuMobile');
+        menu.classList.toggle('open');
+    }
 </script>
+
 </body>
 </html>
