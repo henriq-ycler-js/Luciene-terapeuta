@@ -11,14 +11,9 @@ html {
 }
 
 /* PALETA DE CORES VERDE */
-/* Destaque Primário (Botões, Hover): #38761d (Verde Oliva Escuro) */
-/* Destaque Secundário (Links, Foco): #70a845 (Verde Grama) */
-/* Fundo Suave: #f9fff6 (Quase Branco Esverdeado) */
-/* Cores do Texto (Mantenho escuro para legibilidade) */
-
 body {
     font-family: 'Inter', Arial, sans-serif;
-    background: #f9fff6; /* Fundo mais suave e claro */
+    background: #f9fff6;
     color: #2e3a45;
 }
 
@@ -42,7 +37,7 @@ h1 {
 h2 {
     font-size: 32px;
     font-weight: 700;
-    color: #38761d; /* Título secundário em Verde */
+    color: #38761d;
     margin-bottom: 16px;
 }
 
@@ -78,10 +73,10 @@ p {
 header {
     position: sticky;
     top: 0;
-    background: #ffffffdd; /* Fundo semi-transparente */
+    background: #ffffffdd;
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid #e1eebf; /* Borda suavemente verde */
-    padding: 18px 0;
+    border-bottom: 1px solid #e1eebf;
+    padding: 14px 0;
     z-index: 10;
 }
 
@@ -89,13 +84,39 @@ header .container-flex {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* LOGO MENOR */
+header .container-flex img {
+    height: 48px;
+    width: auto;
+}
+
+/* NOME AO LADO DA LOGO */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-left span {
+    font-size: 22px;
+    font-weight: 700;
+    color: #38761d;
+}
+
+/* MENU */
+header nav {
+    display: flex;
+    gap: 24px;
 }
 
 header nav a {
-    margin-left: 20px;
     text-decoration: none;
     color: #555;
     font-weight: 600;
@@ -103,7 +124,18 @@ header nav a {
 }
 
 header nav a:hover {
-    color: #38761d; /* Link hover em Verde Escuro */
+    color: #38761d;
+}
+
+/* MOBILE: esconde o menu */
+@media (max-width: 850px) {
+    header nav {
+        display: none;
+    }
+
+    header .container-flex {
+        justify-content: center;
+    }
 }
 
 /* --- BOTÕES --- */
@@ -111,17 +143,17 @@ header nav a:hover {
 .btn {
     display: inline-block;
     padding: 14px 24px;
-    background: #70a845; /* Botão em Verde Grama */
+    background: #70a845;
     color: white;
     font-weight: 700;
     border-radius: 14px;
     text-decoration: none;
     transition: .25s ease;
-    box-shadow: 0 4px 16px rgba(112,168,69,0.4); /* Sombra Verde */
+    box-shadow: 0 4px 16px rgba(112,168,69,0.4);
 }
 
 .btn:hover {
-    background: #38761d; /* Hover em Verde Oliva Escuro */
+    background: #38761d;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(112,168,69,0.5);
 }
@@ -130,11 +162,11 @@ header nav a:hover {
 
 .grid, .contato-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Usando Grid para flexibilidade */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-/* --- BANNER (Ajuste Principal) --- */
+/* --- BANNER --- */
 
 .banner {
     display: grid;
@@ -150,7 +182,7 @@ header nav a:hover {
     object-fit: cover;
 }
 
-/* --- SOBRE (Ajuste Principal) --- */
+/* --- SOBRE --- */
 
 .sobre {
     display: flex;
@@ -160,7 +192,21 @@ header nav a:hover {
 
 .sobre img {
     width: 330px;
-    flex-shrink: 0; /* Impede a imagem de encolher em telas grandes */
+    flex-shrink: 0;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+/* --- FOTO3 MENOR (especial-card) --- */
+
+.especial-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.especial-card img {
+    width: 260px; /* FOTO 3 MENOR */
     border-radius: 18px;
     box-shadow: 0 8px 28px rgba(0,0,0,0.12);
 }
@@ -190,7 +236,7 @@ header nav a:hover {
     padding: 26px;
     border-radius: 18px;
     background: #fff;
-    border: 1px solid #e1eebf; /* Borda suavemente verde */
+    border: 1px solid #e1eebf;
     box-shadow: 0 6px 25px rgba(0,0,0,0.05);
     transition: .3s;
 }
@@ -202,7 +248,7 @@ header nav a:hover {
 /* --- RODAPÉ --- */
 
 footer {
-    background: #f5fcf0; /* Fundo suavemente verde */
+    background: #f5fcf0;
     padding: 40px;
     text-align: center;
     color: #7d8691;
@@ -212,43 +258,42 @@ footer {
 }
 
 /* ========================================================= */
-/* 📱 MEDIA QUERIES PARA RESPONSIVIDADE (MOBILE FIRST) */
+/* 📱 MEDIA QUERIES */
 /* ========================================================= */
 
-/* Telas menores que 850px (Geralmente Tablets em Portrait ou Celulares grandes) */
 @media (max-width: 850px) {
-    /* CABEÇALHO: Esconde o menu de navegação para mobile */
-    header nav {
-        display: none; /* Idealmente, aqui entraria um ícone de Menu Hamburger */
-    }
 
-    /* BANNER: Transforma de 2 colunas para 1 (empilhando) */
     .banner {
         grid-template-columns: 1fr;
         gap: 30px;
     }
 
-    /* SOBRE: Transforma de lado a lado para empilhamento vertical */
     .sobre {
         flex-direction: column;
         gap: 30px;
     }
     
     .sobre img {
-        width: 100%; /* Imagem ocupando toda a largura no mobile */
-        max-width: 300px; /* Limite para não ficar gigante */
-        order: -1; /* Coloca a imagem no topo do texto */
+        width: 100%;
+        max-width: 300px;
+        order: -1;
     }
 
-    /* CONTAINERS: Reduz o espaçamento vertical */
+    .especial-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .especial-card img {
+        width: 220px;
+    }
+
     section {
         margin: 60px auto;
     }
 }
 
-/* Telas menores que 480px (Celulares) */
 @media (max-width: 480px) {
-    /* TÍTULOS: Ajusta o tamanho da fonte para celular */
     h1 {
         font-size: 34px;
     }
@@ -259,7 +304,6 @@ footer {
         font-size: 16px;
     }
 
-    /* PLANOS: No celular, faz o plano ir para coluna única */
     .plano {
         flex-direction: column;
         align-items: flex-start;
