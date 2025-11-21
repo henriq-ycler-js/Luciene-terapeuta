@@ -1,5 +1,4 @@
 /* RESET GLOBAL */
-
 * {
     margin: 0;
     padding: 0;
@@ -10,23 +9,21 @@ html {
     scroll-behavior: smooth;
 }
 
-/* PALETA DE CORES VERDE */
+/* ESTILO GERAL */
 body {
     font-family: 'Inter', Arial, sans-serif;
     background: #f9fff6;
     color: #2e3a45;
 }
 
-/* --- CONTAINERS E ESPAÇAMENTO --- */
-
+/* CONTAINERS E ESPAÇAMENTO */
 section {
     max-width: 1100px;
     margin: 100px auto;
     padding: 0 20px;
 }
 
-/* --- TÍTULOS --- */
-
+/* TÍTULOS */
 h1 {
     font-size: 42px;
     font-weight: 800;
@@ -53,8 +50,7 @@ p {
     color: #555;
 }
 
-/* --- ANIMAÇÕES SUAVES --- */
-
+/* ANIMAÇÕES */
 .fade {
     opacity: 0;
     transform: translateY(25px);
@@ -68,8 +64,7 @@ p {
     }
 }
 
-/* --- CABEÇALHO --- */
-
+/* CABEÇALHO */
 header {
     position: sticky;
     top: 0;
@@ -97,7 +92,7 @@ header .container-flex img {
     width: auto;
 }
 
-/* NOME AO LADO DA LOGO */
+/* LOGO + NOME */
 .header-left {
     display: flex;
     align-items: center;
@@ -127,7 +122,7 @@ header nav a:hover {
     color: #38761d;
 }
 
-/* MOBILE: esconde o menu */
+/* MOBILE — esconde menu */
 @media (max-width: 850px) {
     header nav {
         display: none;
@@ -138,8 +133,7 @@ header nav a:hover {
     }
 }
 
-/* --- BOTÕES --- */
-
+/* BOTÕES */
 .btn {
     display: inline-block;
     padding: 14px 24px;
@@ -158,16 +152,14 @@ header nav a:hover {
     box-shadow: 0 6px 20px rgba(112,168,69,0.5);
 }
 
-/* --- LAYOUTS (GRID e FLEX) --- */
-
+/* GRID */
 .grid, .contato-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-/* --- BANNER --- */
-
+/* BANNER */
 .banner {
     display: grid;
     grid-template-columns: 1fr 450px;
@@ -182,8 +174,7 @@ header nav a:hover {
     object-fit: cover;
 }
 
-/* --- SOBRE --- */
-
+/* SOBRE */
 .sobre {
     display: flex;
     gap: 40px;
@@ -197,8 +188,7 @@ header nav a:hover {
     box-shadow: 0 8px 28px rgba(0,0,0,0.12);
 }
 
-/* --- FOTO3 MENOR (especial-card) --- */
-
+/* FOTO 3 MENOR */
 .especial-card {
     display: flex;
     align-items: center;
@@ -206,13 +196,13 @@ header nav a:hover {
 }
 
 .especial-card img {
-    width: 260px; /* FOTO 3 MENOR */
+    width: 240px !important; /* 👈 GARANTIDO QUE FICA MENOR */
+    height: auto;
     border-radius: 18px;
     box-shadow: 0 8px 28px rgba(0,0,0,0.12);
 }
 
-/* --- CARDS --- */
-
+/* CARDS */
 .card {
     background: #ffffff;
     padding: 22px;
@@ -227,8 +217,7 @@ header nav a:hover {
     box-shadow: 0 10px 30px rgba(0,0,0,0.07);
 }
 
-/* --- PLANOS --- */
-
+/* PLANOS */
 .plano {
     display: flex;
     justify-content: space-between;
@@ -245,8 +234,7 @@ header nav a:hover {
     transform: translateY(-4px);
 }
 
-/* --- RODAPÉ --- */
-
+/* RODAPÉ */
 footer {
     background: #f5fcf0;
     padding: 40px;
@@ -257,10 +245,7 @@ footer {
     margin-top: 50px;
 }
 
-/* ========================================================= */
-/* 📱 MEDIA QUERIES */
-/* ========================================================= */
-
+/* MEDIA QUERIES */
 @media (max-width: 850px) {
 
     .banner {
@@ -272,7 +257,7 @@ footer {
         flex-direction: column;
         gap: 30px;
     }
-    
+
     .sobre img {
         width: 100%;
         max-width: 300px;
@@ -285,7 +270,7 @@ footer {
     }
 
     .especial-card img {
-        width: 220px;
+        width: 220px !important;
     }
 
     section {
