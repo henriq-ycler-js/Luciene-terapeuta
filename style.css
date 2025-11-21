@@ -93,12 +93,6 @@ header .container-flex img {
 }
 
 /* LOGO + NOME */
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
 .header-left span {
     font-size: 22px;
     font-weight: 700;
@@ -243,6 +237,12 @@ footer {
     font-size: 15px;
     border-top: 1px solid #e1eebf;
     margin-top: 50px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 /* MEDIA QUERIES */
