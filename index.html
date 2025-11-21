@@ -1,234 +1,190 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luciene Oliveira - Terapia TRG</title>
+    <title>Psicóloga – Bem-Estar Emocional</title>
 
-    <!-- Importa o CSS externo -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Fonte Inter (moderna e premium) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f9ff;
+            color: #333;
+        }
+
+        header {
+            background: #5a7ce2;
+            padding: 18px;
+            color: white;
+            text-align: center;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #4e6cd1;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 12px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 25px 18px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: #4e6cd1;
+        }
+
+        .section-text {
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* RODAPÉ */
+        footer {
+            background: #4e6cd1;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (min-width: 700px) {
+            .cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ============================
-      CABEÇALHO
-============================ -->
 <header>
-    <div class="container-flex">
-        <div class="logo" style="display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;">
-            <div style="
-                width:42px;
-                height:42px;
-                background:#0096e6;
-                color:white;
-                display:flex;
-                justify-content:center;
-                align-items:center;
-                border-radius:12px;
-                font-weight:900;
-            ">Lucy</div>
-            Luciene Oliveira
-        </div>
-
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#especializacoes">Especializações</a>
-            <a href="#planos">Planos</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </div>
+    <h1>Psicóloga - Cuidando do Seu Bem-Estar Emocional</h1>
 </header>
 
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#especializacao">Especialização</a>
+    <a href="#planos">Planos</a>
+    <a href="#contato">Contato</a>
+</nav>
 
-<!-- ============================
-      BANNER PRINCIPAL
-============================ -->
-<section id="inicio" class="banner fade">
-    <div>
-        <h1>Transforme sua vida com a TRG</h1>
-
-        <p>
-            A Terapia de Reprocessamento Generativo ajuda a superar ansiedade,
-            traumas e desequilíbrios emocionais com acolhimento, segurança e 
-            resultados reais.
-        </p>
-
-        <a href="https://wa.me/558387149152?text=Olá,+quero+agendar+uma+sessão+de+TRG"
-           class="btn">Agendar Sessão</a>
-    </div>
-
-    <div>
-        <img src="imagens/foto1.jpg" alt="Luciene Oliveira">
-    </div>
-</section>
-
-
-<!-- ============================
-      SOBRE A TERAPEUTA
-============================ -->
-<section id="sobre" class="sobre fade">
-    <div>
-        <h2>Sobre a Terapeuta</h2>
-
-        <p>
-            Sou <strong>Luciene Oliveira</strong>, especialista em Terapia Emocional
-            TRG. Meu trabalho é acolher, escutar e ajudar você a transformar dores
-            emocionais profundas em paz, clareza e equilíbrio.
-        </p>
-
-        <div class="grid" style="margin-top:20px;">
-            <div class="card">
-                <h3>Atendimento</h3>
-                <p>Online, seguro e acolhedor.</p>
-            </div>
-            <div class="card">
-                <h3>Duração</h3>
-                <p>55 minutos por sessão.</p>
-            </div>
-            <div class="card">
-                <h3>Abordagem</h3>
-                <p>TRG com resultados rápidos.</p>
-            </div>
-        </div>
-
-    </div>
-
-    <img src="imagens/foto2.jpg" alt="Terapeuta">
-</section>
-
-
-<!-- ============================
-      ESPECIALIZAÇÕES
-============================ -->
-<section id="especializacoes" class="fade">
-    <h2>Áreas de Atuação</h2>
-
-    <p style="max-width:800px;">
-        Atendo mulheres e pessoas que enfrentam ansiedade, depressão, crises
-        emocionais, transtornos alimentares, traumas, abusos e dificuldades que
-        impactam sua vida e bem-estar.
+<!-- INÍCIO -->
+<section id="inicio">
+    <h2 class="section-title">Bem-vindo(a)</h2>
+    <p class="section-text">
+        Aqui você encontra um espaço de acolhimento, escuta e cuidado emocional.
     </p>
 
-    <div class="especial-card" style="margin-top:30px;">
-        <img src="imagens/foto3.jpg" alt="TRG">
+    <div class="cards">
+        <div class="card">
+            <img src="img1.jpg">
+            <p>Acolhimento emocional</p>
+        </div>
 
-        <div>
-            <h3>Por que a TRG funciona?</h3>
-            <p>
-                A TRG trabalha diretamente na raiz emocional.  
-                Não é só “conversar”: você realmente transforma padrões mentais e
-                emocionais que estavam te prendendo.  
-                O resultado é leveza, clareza e equilíbrio interno.
-            </p>
+        <div class="card">
+            <img src="img2.jpg">
+            <p>Atendimento profissional</p>
+        </div>
+
+        <div class="card">
+            <img src="img3.jpg">
+            <p>Ambiente seguro e sigiloso</p>
         </div>
     </div>
 </section>
 
-
-<!-- ============================
-      PLANOS
-============================ -->
-<section id="planos" class="fade">
-    <h2>Planos e Valores</h2>
-
-    <div class="plano" style="margin-top:25px;">
-        <div>
-            <h3>Sessão Individual</h3>
-            <p>55 minutos de atenção completa a você.</p>
-        </div>
-
-        <div style="text-align:right;">
-            <h2>R$ 120</h2>
-            <a class="btn"
-               href="https://wa.me/558387149152?text=Olá,+quero+a+sessão+individual+de+R$120">
-               Quero este plano
-            </a>
-        </div>
-    </div>
-
-    <div class="plano" style="margin-top:25px;">
-        <div>
-            <h3>Pacote Mensal (4 sessões)</h3>
-            <p>Acompanhamento e evolução contínua.</p>
-        </div>
-
-        <div style="text-align:right;">
-            <h2>R$ 360</h2>
-            <a class="btn"
-               href="https://wa.me/558387149152?text=Olá,+quero+o+pacote+mensal+de+4+sessões">
-               Quero este plano
-            </a>
-        </div>
-    </div>
+<!-- SOBRE -->
+<section id="sobre">
+    <h2 class="section-title">Sobre Mim</h2>
+    <p class="section-text">
+        Sou psicóloga dedicada ao cuidado emocional e à construção de uma vida mais leve e saudável.
+    </p>
 </section>
 
-
-<!-- ============================
-      CONTATO
-============================ -->
-<section id="contato" class="fade">
-    <h2>Contato</h2>
-
-    <div class="contato-grid" style="margin-top:20px;">
-
-        <div class="card" style="flex:1;">
-            <h3>WhatsApp</h3>
-            <p>
-                <a href="https://wa.me/558387149152"
-                   target="_blank"
-                   style="color:#0096e6; font-weight:600; text-decoration:none;">
-                   Clique aqui para abrir o WhatsApp
-                </a>
-            </p>
-        </div>
-
-        <div class="card" style="flex:1;">
-            <h3>Instagram</h3>
-            <p>
-                <a href="https://www.instagram.com/lucyoliveira_terapeuta"
-                   target="_blank"
-                   style="color:#0096e6; font-weight:600; text-decoration:none;">
-                   @lucyoliveira_terapeuta
-                </a>
-            </p>
-        </div>
-
-        <div class="card" style="flex:1;">
-            <h3>E-mail</h3>
-            <p>
-                <a href="mailto:lucioliverterapeuta@gmail.com"
-                   style="color:#0096e6; font-weight:600; text-decoration:none;">
-                   Enviar e-mail
-                </a>
-            </p>
-        </div>
-
-    </div>
-
-    <div style="margin-top:35px;text-align:center;">
-        <a class="btn"
-           href="https://wa.me/558387149152?text=Olá,+gostaria+de+informações+sobre+atendimento">
-            Falar no WhatsApp
-        </a>
-    </div>
+<!-- ESPECIALIZAÇÃO -->
+<section id="especializacao">
+    <h2 class="section-title">Especializações</h2>
+    <p class="section-text">
+        Terapia Cognitivo-Comportamental, Ansiedade, Depressão, Autoconhecimento, Relacionamentos.
+    </p>
 </section>
 
+<!-- PLANOS -->
+<section id="planos">
+    <h2 class="section-title">Planos de Atendimento</h2>
+    <p class="section-text">
+        • Sessão individual  
+        • Pacote mensal  
+        • Atendimentos presenciais e online  
+    </p>
+</section>
 
-<!-- ============================
-      RODAPÉ
-============================ -->
+<!-- CONTATO -->
+<section id="contato">
+    <h2 class="section-title">Contato</h2>
+    <p class="section-text">
+        Entre em contato pelo WhatsApp, Instagram ou E-mail.
+    </p>
+    <p class="section-text">
+        <a href="https://wa.me/SEUNUMERO" style="color:#4e6cd1; font-weight:bold;">WhatsApp</a><br>
+        <a href="https://instagram.com/SEUINSTAGRAM" style="color:#4e6cd1; font-weight:bold;">Instagram</a><br>
+        <a href="mailto:SEUEMAIL" style="color:#4e6cd1; font-weight:bold;">E-mail</a>
+    </p>
+</section>
+
 <footer>
-    © <span id="year"></span> Luciene Oliveira — Terapia TRG
+    © 2025 - Todos os direitos reservados.
 </footer>
-
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>
