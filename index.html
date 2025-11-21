@@ -4,110 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psicóloga – Bem-Estar Emocional</title>
-
-    <style>
-        /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f9ff;
-            color: #333;
-        }
-
-        header {
-            background: #5a7ce2;
-            padding: 18px;
-            color: white;
-            text-align: center;
-        }
-
-        /* NAVBAR */
-        nav {
-            background: #4e6cd1;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            padding: 12px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: #fff;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            padding: 25px 18px;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 26px;
-            margin-bottom: 10px;
-            color: #4e6cd1;
-        }
-
-        .section-text {
-            font-size: 17px;
-            line-height: 1.7;
-            max-width: 700px;
-            margin: auto;
-        }
-
-        /* CARDS */
-        .cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 18px;
-            margin-top: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 3px 7px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        /* RODAPÉ */
-        footer {
-            background: #4e6cd1;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            margin-top: 35px;
-        }
-
-        /* RESPONSIVIDADE */
-        @media (min-width: 700px) {
-            .cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <h1>Psicóloga - Cuidando do Seu Bem-Estar Emocional</h1>
+    <h1>Psicóloga • Bem-Estar Emocional</h1>
 </header>
 
 <nav>
@@ -118,72 +21,51 @@
     <a href="#contato">Contato</a>
 </nav>
 
-<!-- INÍCIO -->
-<section id="inicio">
-    <h2 class="section-title">Bem-vindo(a)</h2>
-    <p class="section-text">
-        Aqui você encontra um espaço de acolhimento, escuta e cuidado emocional.
-    </p>
-
-    <div class="cards">
-        <div class="card">
-            <img src="img1.jpg">
-            <p>Acolhimento emocional</p>
-        </div>
-
-        <div class="card">
-            <img src="img2.jpg">
-            <p>Atendimento profissional</p>
-        </div>
-
-        <div class="card">
-            <img src="img3.jpg">
-            <p>Ambiente seguro e sigiloso</p>
-        </div>
-    </div>
-</section>
-
-<!-- SOBRE -->
-<section id="sobre">
-    <h2 class="section-title">Sobre Mim</h2>
-    <p class="section-text">
-        Sou psicóloga dedicada ao cuidado emocional e à construção de uma vida mais leve e saudável.
+<section id="inicio" class="section">
+    <h2>Bem-vindo(a)</h2>
+    <p>
+        Um espaço seguro, acolhedor e dedicado ao seu bem-estar emocional.
     </p>
 </section>
 
-<!-- ESPECIALIZAÇÃO -->
-<section id="especializacao">
-    <h2 class="section-title">Especializações</h2>
-    <p class="section-text">
-        Terapia Cognitivo-Comportamental, Ansiedade, Depressão, Autoconhecimento, Relacionamentos.
+<section id="sobre" class="section">
+    <h2>Sobre Mim</h2>
+    <p>
+        Psicóloga especializada em acolhimento emocional, saúde mental e desenvolvimento pessoal.
     </p>
 </section>
 
-<!-- PLANOS -->
-<section id="planos">
-    <h2 class="section-title">Planos de Atendimento</h2>
-    <p class="section-text">
-        • Sessão individual  
-        • Pacote mensal  
-        • Atendimentos presenciais e online  
+<section id="especializacao" class="section">
+    <h2>Especializações</h2>
+    <ul>
+        <li>Ansiedade e Depressão</li>
+        <li>Terapia Cognitivo-Comportamental</li>
+        <li>Autoconhecimento</li>
+        <li>Relacionamentos</li>
+    </ul>
+</section>
+
+<section id="planos" class="section">
+    <h2>Planos</h2>
+    <p>
+        Sessões individuais, pacotes mensais, atendimentos online e presenciais.
     </p>
 </section>
 
-<!-- CONTATO -->
-<section id="contato">
-    <h2 class="section-title">Contato</h2>
-    <p class="section-text">
-        Entre em contato pelo WhatsApp, Instagram ou E-mail.
+<section id="contato" class="section">
+    <h2>Contato</h2>
+    <p>
+        Entre em contato pelas redes:
     </p>
-    <p class="section-text">
-        <a href="https://wa.me/SEUNUMERO" style="color:#4e6cd1; font-weight:bold;">WhatsApp</a><br>
-        <a href="https://instagram.com/SEUINSTAGRAM" style="color:#4e6cd1; font-weight:bold;">Instagram</a><br>
-        <a href="mailto:SEUEMAIL" style="color:#4e6cd1; font-weight:bold;">E-mail</a>
+    <p class="links">
+        <a href="#">WhatsApp</a><br>
+        <a href="#">Instagram</a><br>
+        <a href="#">E-mail</a>
     </p>
 </section>
 
 <footer>
-    © 2025 - Todos os direitos reservados.
+    © 2025 – Todos os direitos reservados.
 </footer>
 
 </body>
