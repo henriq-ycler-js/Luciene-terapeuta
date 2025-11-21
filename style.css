@@ -239,12 +239,6 @@ footer {
     margin-top: 50px;
 }
 
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
 /* MEDIA QUERIES */
 @media (max-width: 850px) {
 
@@ -294,4 +288,10 @@ footer {
         align-items: flex-start;
         gap: 15px;
     }
+
+    .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 }
