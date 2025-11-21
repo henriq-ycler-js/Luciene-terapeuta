@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Luciene Oliveira - Terapia TRG</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -27,29 +27,22 @@
             Luciene Oliveira
         </div>
 
-        <!-- MENU DESKTOP -->
-        <nav class="menu-desktop">
+        <!-- BOTÃO MOBILE BONITO -->
+        <div class="menu-btn" id="menu-btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav id="menu">
             <a href="#inicio">Início</a>
             <a href="#sobre">Sobre</a>
             <a href="#especializacoes">Especializações</a>
             <a href="#planos">Planos</a>
             <a href="#contato">Contato</a>
         </nav>
-
-        <!-- BOTÃO MOBILE -->
-        <div class="menu-btn" onclick="abrirMenu()">☰</div>
-
     </div>
 </header>
-
-<!-- MENU MOBILE LATERAL -->
-<div id="menuMobile" class="menu-mobile">
-    <a href="#inicio" onclick="abrirMenu()">Início</a>
-    <a href="#sobre" onclick="abrirMenu()">Sobre</a>
-    <a href="#especializacoes" onclick="abrirMenu()">Especializações</a>
-    <a href="#planos" onclick="abrirMenu()">Planos</a>
-    <a href="#contato" onclick="abrirMenu()">Contato</a>
-</div>
 
 <section id="inicio" class="banner fade container"> 
     <div>
@@ -71,7 +64,6 @@
 <section id="sobre" class="sobre fade container">
     <div>
         <h2>Sobre a Terapeuta</h2>
-
         <p>
             Sou <strong>Luciene Oliveira</strong>, especialista em Terapia Emocional
             TRG. Meu trabalho é acolher, escutar e ajudar você a transformar dores
@@ -92,11 +84,10 @@
                 <p>TRG com resultados rápidos.</p>
             </div>
         </div>
-
     </div>
 
-    <!-- SEGUNDA IMAGEM DIMINUÍDA -->
-    <img src="imagens/foto2.jpg" alt="Terapeuta" style="width:240px; border-radius:18px; box-shadow:0 8px 28px rgba(0,0,0,0.12);">
+    <!-- IMAGEM 2 AGORA REDUZIDA -->
+    <img src="imagens/foto2.jpg" class="img-menor" alt="Terapeuta">
 </section>
 
 <section id="especializacoes" class="fade container">
@@ -110,7 +101,6 @@
 
     <div class="especial-card" style="margin-top:30px;">
         <img src="imagens/foto3.jpg" alt="TRG">
-
         <div>
             <h3>Por que a TRG funciona?</h3>
             <p>
@@ -211,10 +201,14 @@
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    function abrirMenu() {
-        const menu = document.getElementById('menuMobile');
-        menu.classList.toggle('open');
-    }
+    // MENU MOBILE
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+        btn.classList.toggle("open");
+    });
 </script>
 
 </body>
