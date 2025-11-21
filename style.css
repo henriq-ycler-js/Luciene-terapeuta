@@ -1,113 +1,268 @@
-/* RESET */
+/* RESET GLOBAL */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* PALETA DE CORES VERDE */
+/* Destaque Primário (Botões, Hover): #38761d (Verde Oliva Escuro) */
+/* Destaque Secundário (Links, Foco): #70a845 (Verde Grama) */
+/* Fundo Suave: #f9fff6 (Quase Branco Esverdeado) */
+/* Cores do Texto (Mantenho escuro para legibilidade) */
+
 body {
-    font-family: "Inter", sans-serif;
-    background: #f5f9ff;
-    color: #333;
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f9fff6; /* Fundo mais suave e claro */
+    color: #2e3a45;
 }
 
-/* HEADER */
-header {
-    width: 100%;
-    background: white;
-    padding: 15px 20px;
-    box-shadow: 0 2px 8px #00000015;
-    position: fixed;
-    top: 0;
-    z-index: 20;
-}
+/* --- CONTAINERS E ESPAÇAMENTO --- */
 
-.container-flex {
+section {
     max-width: 1100px;
-    margin: auto;
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
+/* --- TÍTULOS --- */
+
+h1 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #38761d; /* Título secundário em Verde */
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2b2b2b;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* --- ANIMAÇÕES SUAVES --- */
+
+.fade {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeUp .9s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- CABEÇALHO --- */
+
+header {
+    position: sticky;
+    top: 0;
+    background: #ffffffdd; /* Fundo semi-transparente */
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e1eebf; /* Borda suavemente verde */
+    padding: 18px 0;
+    z-index: 10;
+}
+
+header .container-flex {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* MENU DESKTOP */
-nav {
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
+header nav a {
+    margin-left: 20px;
     text-decoration: none;
+    color: #555;
     font-weight: 600;
-    color: #333;
+    transition: .2s;
 }
 
-nav a:hover {
-    color: #38761d;
+header nav a:hover {
+    color: #38761d; /* Link hover em Verde Escuro */
 }
 
-/* BOTÃO MOBILE */
-.menu-btn {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
+/* --- BOTÕES --- */
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    background: #70a845; /* Botão em Verde Grama */
+    color: white;
+    font-weight: 700;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: .25s ease;
+    box-shadow: 0 4px 16px rgba(112,168,69,0.4); /* Sombra Verde */
 }
 
-.menu-btn div {
-    width: 28px;
-    height: 3px;
-    background: #333;
-    transition: 0.3s;
+.btn:hover {
+    background: #38761d; /* Hover em Verde Oliva Escuro */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(112,168,69,0.5);
 }
 
-/* ANIMAÇÃO X */
-.menu-btn.open div:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-.menu-btn.open div:nth-child(2) {
-    opacity: 0;
-}
-.menu-btn.open div:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+/* --- LAYOUTS (GRID e FLEX) --- */
+
+.grid, .contato-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Usando Grid para flexibilidade */
+    gap: 30px;
 }
 
-/* MOBILE CONFIG */
-@media (max-width: 860px) {
-    nav {
-        position: absolute;
-        top: 75px;
-        right: 0;
-        background: white;
-        width: 100%;
-        display: none;
+/* --- BANNER (Ajuste Principal) --- */
+
+.banner {
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    gap: 50px;
+    align-items: center;
+}
+
+.banner img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    object-fit: cover;
+}
+
+/* --- SOBRE (Ajuste Principal) --- */
+
+.sobre {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.sobre img {
+    width: 330px;
+    flex-shrink: 0; /* Impede a imagem de encolher em telas grandes */
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+/* --- CARDS --- */
+
+.card {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 18px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0 6px 26px rgba(0,0,0,0.05);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+
+/* --- PLANOS --- */
+
+.plano {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid #e1eebf; /* Borda suavemente verde */
+    box-shadow: 0 6px 25px rgba(0,0,0,0.05);
+    transition: .3s;
+}
+
+.plano:hover {
+    transform: translateY(-4px);
+}
+
+/* --- RODAPÉ --- */
+
+footer {
+    background: #f5fcf0; /* Fundo suavemente verde */
+    padding: 40px;
+    text-align: center;
+    color: #7d8691;
+    font-size: 15px;
+    border-top: 1px solid #e1eebf;
+    margin-top: 50px;
+}
+
+/* ========================================================= */
+/* 📱 MEDIA QUERIES PARA RESPONSIVIDADE (MOBILE FIRST) */
+/* ========================================================= */
+
+/* Telas menores que 850px (Geralmente Tablets em Portrait ou Celulares grandes) */
+@media (max-width: 850px) {
+    /* CABEÇALHO: Esconde o menu de navegação para mobile */
+    header nav {
+        display: none; /* Idealmente, aqui entraria um ícone de Menu Hamburger */
+    }
+
+    /* BANNER: Transforma de 2 colunas para 1 (empilhando) */
+    .banner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* SOBRE: Transforma de lado a lado para empilhamento vertical */
+    .sobre {
         flex-direction: column;
-        padding: 20px 0;
-        text-align: center;
-        box-shadow: 0 4px 8px #00000015;
+        gap: 30px;
+    }
+    
+    .sobre img {
+        width: 100%; /* Imagem ocupando toda a largura no mobile */
+        max-width: 300px; /* Limite para não ficar gigante */
+        order: -1; /* Coloca a imagem no topo do texto */
     }
 
-    nav.active {
-        display: flex;
-    }
-
-    .menu-btn {
-        display: flex;
+    /* CONTAINERS: Reduz o espaçamento vertical */
+    section {
+        margin: 60px auto;
     }
 }
 
-/* SECTION BASE */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 130px 20px 60px;
-}
+/* Telas menores que 480px (Celulares) */
+@media (max-width: 480px) {
+    /* TÍTULOS: Ajusta o tamanho da fonte para celular */
+    h1 {
+        font-size: 34px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    p {
+        font-size: 16px;
+    }
 
-/* IMAGEM SOBRE REDUZIDA */
-.img-menor {
-    width: 290px;
-    border-radius: 12px;
-    max-width: 90%;
-    display: block;
-    margin: auto;
+    /* PLANOS: No celular, faz o plano ir para coluna única */
+    .plano {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
 }
