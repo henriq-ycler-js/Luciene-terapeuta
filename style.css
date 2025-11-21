@@ -288,10 +288,4 @@ footer {
         align-items: flex-start;
         gap: 15px;
     }
-
-    .header-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
 }
