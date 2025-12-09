@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento - Sessão Individual</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container-flex">
+    <div class="header-left"><span>Luciene Oliveira</span></div>
+    <nav>
+      <a href="index.html">Início</a>
+    </nav>
+  </div>
+</header>
+
+<section class="fade container">
+  <h2>Pagamento - Sessão Individual</h2>
+  <p>55 minutos de atenção completa a você.</p>
+  <p>Valor: R$ 120</p>
+
+  <label for="cupom">Digite seu cupom (se tiver):</label>
+  <input type="text" id="cupom" placeholder="Ex: TRG10">
+
+  <p>Após o pagamento, você receberá o agendamento diretamente no seu WhatsApp.</p>
+
+  <a class="btn" href="https://www.mercadopago.com.br/checkout" target="_blank">Pagar com PIX</a>
+
+  <p style="margin-top:15px;">Dúvidas? Entre em contato: <strong>83 98714-9132</strong></p>
+</section>
+
+<footer>
+  © <span id="year"></span> Luciene Oliveira — Terapia TRG
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
