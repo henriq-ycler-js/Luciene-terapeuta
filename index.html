@@ -1,140 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luciene Oliveira - Terapia TRG</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luciene Oliveira - Terapia TRG</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
-    <div class="container-flex">
-        <div class="header-left">
-            <span>Luciene Oliveira</span>
-        </div>
-    </div>
+  <div class="container-flex">
+    <div class="header-left"><span>Luciene Oliveira</span></div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#especializacoes">Especializações</a>
+      <a href="#planos">Planos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
 </header>
 
-<section class="fade container">
-    <h2>Escolha seu plano</h2>
+<section id="inicio" class="banner fade container">
+  <div>
+    <h1>Transforme sua vida com a TRG</h1>
+    <p>
+      A Terapia de Reprocessamento Generativo ajuda a superar ansiedade,
+      traumas e desequilíbrios emocionais com acolhimento, segurança e 
+      resultados reais.
+    </p>
+    <a href="#planos" class="btn">Agendar Sessão</a>
+  </div>
+  <div>
+    <img src="imagens/foto1.jpg" alt="Luciene Oliveira">
+  </div>
+</section>
 
-    <div class="grid" style="margin-top:30px;">
-        <div class="card" style="text-align:center;">
-            <h3>Sessão Individual</h3>
-            <p>55 minutos de atenção completa a você</p>
-            <h2>R$ 120</h2>
-            <button class="btn" onclick="irParaPagamento('individual')">Escolher</button>
-        </div>
-
-        <div class="card" style="text-align:center;">
-            <h3>Pacote Mensal (4 sessões)</h3>
-            <p>Acompanhamento contínuo e evolução</p>
-            <h2>R$ 360</h2>
-            <button class="btn" onclick="irParaPagamento('mensal')">Escolher</button>
-        </div>
+<section id="sobre" class="sobre fade container">
+  <div>
+    <h2>Sobre a Terapeuta</h2>
+    <p>
+      Sou <strong>Luciene Oliveira</strong>, especialista em Terapia Emocional
+      TRG. Meu trabalho é acolher, escutar e ajudar você a transformar dores
+      emocionais profundas em paz, clareza e equilíbrio.
+    </p>
+    <div class="grid" style="margin-top:20px;">
+      <div class="card"><h3>Atendimento</h3><p>Online, seguro e acolhedor.</p></div>
+      <div class="card"><h3>Duração</h3><p>55 minutos por sessão.</p></div>
+      <div class="card"><h3>Abordagem</h3><p>TRG com resultados rápidos.</p></div>
     </div>
+  </div>
+  <img src="imagens/foto2.jpg" alt="Terapeuta">
 </section>
 
-<section class="fade container" id="pagamentoSection" style="display:none;">
-    <h2>Pagamento PIX</h2>
-    <div id="info"></div>
+<section id="especializacoes" class="fade container">
+  <h2>Áreas de Atuação</h2>
+  <p style="max-width:800px;">
+    Atendo mulheres e pessoas que enfrentam ansiedade, depressão, crises
+    emocionais, transtornos alimentares, traumas, abusos e dificuldades que
+    impactam sua vida e bem-estar.
+  </p>
+  <div class="especial-card" style="margin-top:30px;">
+    <img src="imagens/foto3.jpg" alt="Terapeuta">
+    <div>
+      <h3>Por que a TRG funciona?</h3>
+      <p>
+        A TRG trabalha diretamente na raiz emocional.  
+        Não é só “conversar”: você realmente transforma padrões mentais e
+        emocionais que estavam te prendendo.  
+        O resultado é leveza, clareza e equilíbrio interno.
+      </p>
+    </div>
+  </div>
+</section>
 
-    <div style="margin-top:20px;">
-        <label for="cupom">Digite seu cupom (opcional):</label><br>
-        <input type="text" id="cupom" placeholder="Ex: LUCY10">
-        <button class="btn" onclick="aplicarCupom()">Aplicar</button>
-        <p id="mensagemCupom" style="color:green; margin-top:5px;"></p>
+<section id="planos" class="fade container">
+  <h2>Planos e Valores</h2>
+
+  <div class="plano" style="margin-top:25px;">
+    <div>
+      <h3>Sessão Individual</h3>
+      <p>55 minutos de atenção completa a você.</p>
+    </div>
+    <div style="text-align:right;">
+      <h2>R$ 120</h2>
+      <a class="btn" href="plano-individual.html">Quero este plano</a>
+    </div>
+  </div>
+
+  <div class="plano" style="margin-top:25px;">
+    <div>
+      <h3>Pacote Mensal (4 sessões)</h3>
+      <p>Acompanhamento e evolução contínua.</p>
+    </div>
+    <div style="text-align:right;">
+      <h2>R$ 360</h2>
+      <a class="btn" href="plano-mensal.html">Quero este plano</a>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="fade container">
+  <h2>Contato</h2>
+  <div class="contato-grid" style="margin-top:20px;">
+    <div class="card">
+      <h3>WhatsApp</h3>
+      <p>
+        <a href="https://wa.me/558387149152" target="_blank" style="color:#70a845; font-weight:600;">
+          Clique aqui para abrir o WhatsApp
+        </a>
+      </p>
     </div>
 
-    <h3>Valor a pagar: R$ <span id="valorFinal"></span></h3>
+    <div class="card">
+      <h3>Instagram</h3>
+      <p>
+        <a href="https://www.instagram.com/lucyoliveira_terapeuta" target="_blank" style="color:#70a845; font-weight:600;">
+          @lucyoliveira_terapeuta
+        </a>
+      </p>
+    </div>
 
-    <button class="btn" style="margin-top:20px;" onclick="gerarPagamento()">Gerar PIX</button>
-    <div id="pixQR" style="margin-top:20px;"></div>
+    <div class="card">
+      <h3>E-mail</h3>
+      <p>
+        <a href="mailto:lucioliverterapeuta@gmail.com" style="color:#70a845; font-weight:600;">
+          Enviar e-mail
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <div style="margin-top:35px;text-align:center;">
+    <a class="btn" href="https://wa.me/558387149152?text=Olá,+gostaria+de+informações+sobre+atendimento">
+      Falar no WhatsApp
+    </a>
+  </div>
 </section>
 
-<section class="fade container" id="confirmadoSection" style="display:none;">
-    <h2>Agendamento Confirmado!</h2>
-    <p id="mensagemConfirmado"></p>
-    <p>Em caso de dúvida, entre em contato:</p>
-    <a class="btn" href="https://wa.me/5583987149132">WhatsApp da Luciene</a>
-</section>
+<footer>
+  © <span id="year"></span> Luciene Oliveira — Terapia TRG
+</footer>
 
 <script>
-// ------------------- Fluxo -------------------
-let planoSelecionado = "";
-let valor = 0;
-let descricao = "";
-
-// Cupons permanentes
-const cupons = { "LUCY10": 0.10, "TRG20": 0.20 };
-
-// Cupons temporários
-const cuponsTemporarios = {
-    "PROMO5D": { desconto: 0.05, validade: "2025-12-15" },
-    "BLACKFRIDAY": { desconto: 0.30, validade: "2025-12-10" }
-};
-
-function irParaPagamento(plano){
-    planoSelecionado = plano;
-    if(plano === "individual"){
-        valor = 120;
-        descricao = "Sessão Individual - Luciene";
-    } else if(plano === "mensal"){
-        valor = 360;
-        descricao = "Pacote Mensal - Luciene";
-    }
-
-    document.getElementById("valorFinal").textContent = valor.toFixed(2);
-    document.getElementById("info").innerHTML = `<p>Plano: <b>${descricao}</b></p>`;
-
-    document.querySelector('section[id="pagamentoSection"]').style.display = "block";
-    window.scrollTo(0,document.getElementById("pagamentoSection").offsetTop);
-}
-
-function aplicarCupom(){
-    const codigo = document.getElementById("cupom").value.toUpperCase();
-    const hoje = new Date().toISOString().split("T")[0];
-
-    if(cupons[codigo]){
-        valor = valor - valor * cupons[codigo];
-        document.getElementById("valorFinal").textContent = valor.toFixed(2);
-        document.getElementById("mensagemCupom").textContent = `Cupom permanente aplicado! ${(cupons[codigo]*100).toFixed(0)}% de desconto.`;
-    } else if(cuponsTemporarios[codigo]){
-        if(hoje <= cuponsTemporarios[codigo].validade){
-            valor = valor - valor * cuponsTemporarios[codigo].desconto;
-            document.getElementById("valorFinal").textContent = valor.toFixed(2);
-            document.getElementById("mensagemCupom").textContent = `Cupom temporário aplicado! ${(cuponsTemporarios[codigo].desconto*100).toFixed(0)}% de desconto.`;
-        } else {
-            document.getElementById("mensagemCupom").textContent = "Cupom expirado!";
-        }
-    } else {
-        document.getElementById("mensagemCupom").textContent = "Cupom inválido!";
-    }
-}
-
-function gerarPagamento(){
-    // Aqui você colocaria integração real do Mercado Pago
-    document.getElementById("pixQR").innerHTML = `
-        <p>PIX gerado para R$ ${valor.toFixed(2)} (exemplo)</p>
-        <button class="btn" onclick="confirmarAgendamento()">Confirmar Pagamento</button>
-    `;
-}
-
-function confirmarAgendamento(){
-    document.querySelector('section[id="pagamentoSection"]').style.display = "none";
-    document.querySelector('section[id="confirmadoSection"]').style.display = "block";
-
-    let mensagem = "";
-    if(planoSelecionado === "individual"){
-        mensagem = "Você agendou a Sessão Individual de 55 minutos!";
-    } else if(planoSelecionado === "mensal"){
-        mensagem = "Você agendou o Pacote Mensal com 4 sessões!";
-    }
-
-    document.getElementById("mensagemConfirmado").textContent = mensagem;
-}
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
