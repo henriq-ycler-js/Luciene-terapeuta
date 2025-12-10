@@ -1,58 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pacote Mensal - Luciene Oliveira</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pacote Mensal — Luciene Oliveira</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header class="header">
   <div class="container-flex">
-    <div class="header-left"><span>Luciene Oliveira</span></div>
+    <div class="logo">Luciene Oliveira</div>
+    <nav class="nav-desktop">
+      <a href="index.html#inicio">Início</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#especializacoes">Especializações</a>
+      <a href="index.html#planos">Planos</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+    <div class="hamburger"><span class="bar"></span></div>
   </div>
 </header>
 
-<section class="container fade">
-  <h2>Pacote Mensal - 4 sessões</h2>
-  <p>Acompanhamento completo e evolução contínua.</p>
+<aside class="sidebar">
+  <div class="close"><button class="btn" onclick="document.querySelector('.sidebar').classList.remove('open')">Fechar</button></div>
+  <nav>
+    <a href="index.html#inicio">Início</a>
+    <a href="index.html#sobre">Sobre</a>
+    <a href="index.html#especializacoes">Especializações</a>
+    <a href="index.html#planos">Planos</a>
+    <a href="index.html#contato">Contato</a>
+  </nav>
+</aside>
 
-  <form id="pagamentoForm">
-    <label>Seu Nome:</label>
-    <input type="text" name="nome" required>
-    <label>Seu WhatsApp:</label>
-    <input type="text" name="whatsapp" required>
-    <label>Se tiver cupom, insira:</label>
-    <input type="text" name="cupom">
-    <button type="submit" class="btn">Gerar link de pagamento</button>
-  </form>
+<main class="container">
+  <section style="margin-top:26px;">
+    <h1>Pacote Mensal (4 sessões)</h1>
+    <p>Acompanhamento semanal — 4 sessões por mês. Ideal para evolução contínua.</p>
+  </section>
 
-  <div id="linkPagamento" style="margin-top:20px;"></div>
-</section>
+  <section>
+    <div class="form-wrap">
+      <form id="bookingForm" data-plan="mensal" autocomplete="off">
+        <div class="field icon" data-icon="👤">
+          <input type="text" name="name" placeholder=" " required>
+          <label>Nome completo</label>
+        </div>
 
-<script>
-const form = document.getElementById('pagamentoForm');
-const linkDiv = document.getElementById('linkPagamento');
+        <div class="field icon" data-icon="📱">
+          <input type="tel" name="whatsapp" placeholder=" " required>
+          <label>WhatsApp (com DDD)</label>
+        </div>
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const nome = form.nome.value;
-  const whatsapp = form.whatsapp.value;
-  const cupom = form.cupom.value;
+        <div style="display:flex;gap:12px">
+          <div class="field" style="flex:1" data-icon="📅">
+            <input type="date" name="date" placeholder=" " required>
+            <label>Primeiro dia (ou preferência)</label>
+          </div>
 
-  // Exemplo de desconto por cupom
-  let valor = 360;
-  if(cupom.toUpperCase() === "DESCONTO10") valor = 324;
+          <div class="field" style="width:150px" data-icon="⏰">
+            <input type="time" name="time" placeholder=" " required>
+            <label>Horário preferido</label>
+          </div>
+        </div>
 
-  // Link de checkout Mercado Pago (substitua pelo seu real)
-  const link = `https://www.mercadopago.com.br/checkout?pref_id=SEU_PREF_ID&valor=${valor}`;
+        <div class="field" data-icon="💬">
+          <input type="text" name="coupon" placeholder=" ">
+          <label>Tem cupom? (opcional)</label>
+        </div>
 
-  linkDiv.innerHTML = `<p>Olá ${nome}, clique no botão abaixo para pagar:</p>
-  <a class="btn" href="${link}" target="_blank">Pagar R$${valor}</a>
-  <p>Após o pagamento, seu agendamento será confirmado via WhatsApp.</p>`;
-});
-</script>
+        <div class="form-actions">
+          <div class="coupon">Valor: <strong>R$ 360</strong></div>
+          <button type="submit" class="btn">Prosseguir para pagamento</button>
+        </div>
 
+      </form>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
