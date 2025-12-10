@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pagamento — Luciene Oliveira</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container-flex">
+    <div class="logo">Luciene Oliveira</div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="payment-card">
+    <h2>Resumo do pagamento</h2>
+    <p id="summaryText">Carregando resumo...</p>
+    <div style="margin-top:18px">
+      <div class="payment-amount" id="amountText">R$ --</div>
+      <a id="checkoutBtn" class="btn" href="#">Ir para o pagamento</a>
+    </div>
+    <p style="margin-top:12px;color:#6b6b6b;font-size:14px">Após o pagamento, você receberá confirmação e o agendamento será criado automaticamente.</p>
+  </section>
+</main>
+
+<script>
+/* pagamento.html - espera receber via querystring: ?plan=individual&name=...&date=...&time=...&amount=120 */
+function qs(key){
+  const params = new URLSearchParams(location.search);
+  return params.get(key);
+}
+const plan = qs('plan');
+const name = qs('name');
+const date = qs('date');
+const time = qs('time');
+const amount = qs('amount');
+
+document.getElementById('summaryText').textContent = `${plan === 'mensal' ? 'Pacote Mensal — 4 sessões' : 'Sessão Individual'} — ${name} — ${date} às ${time}`;
+document.getElementById('amountText').textContent = `R$ ${amount || '--'}`;
+const checkoutBtn = document.getElementById('checkoutBtn');
+
+// O checkout real deve vir do backend => preferencia do Mercado Pago.
+// Aqui apenas placeholder que você trocará para o valor retornado pelo backend:
+checkoutBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  alert('Você deve ser redirecionado ao Mercado Pago. O link é gerado pelo backend.');
+  // exemplo: window.location.href = 'https://www.mercadopago.com.br/checkout?pref_id=SEU_PREF_ID';
+});
+</script>
+</body>
+</html>
