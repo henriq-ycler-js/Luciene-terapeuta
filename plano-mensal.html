@@ -1,69 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pacote Mensal — Luciene Oliveira</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pacote Mensal</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
-  <div class="container-flex">
-    <div class="logo">Luciene Oliveira</div>
-    <div class="hamburger"><span class="bar"></span></div>
-  </div>
-</header>
+<section class="form-container">
+<h2>Pacote Mensal</h2>
 
-<aside class="sidebar">
-  <div class="close"><button class="btn" onclick="document.querySelector('.sidebar').classList.remove('open')">Fechar</button></div>
-</aside>
-
-<main class="container">
-  <section style="margin-top:26px;">
-    <h1>Pacote Mensal (4 sessões)</h1>
-    <p>Acompanhamento semanal — 4 sessões por mês. Ideal para evolução contínua.</p>
-  </section>
-
-  <section>
-    <div class="form-wrap">
-      <form id="bookingForm" data-plan="mensal" autocomplete="off">
-        <div class="field icon" data-icon="👤">
-          <input type="text" name="name" placeholder=" " required>
-          <label>Nome completo</label>
-        </div>
-
-        <div class="field icon" data-icon="📱">
-          <input type="tel" name="whatsapp" placeholder=" " required>
-          <label>WhatsApp (com DDD)</label>
-        </div>
-
-        <div style="display:flex;gap:12px">
-          <div class="field" style="flex:1" data-icon="📅">
-            <input type="date" name="date" placeholder=" " required>
-            <label>Primeiro dia (ou preferência)</label>
-          </div>
-
-          <div class="field" style="width:150px" data-icon="⏰">
-            <input type="time" name="time" placeholder=" " required>
-            <label>Horário preferido</label>
-          </div>
-        </div>
-
-        <div class="field" data-icon="💬">
-          <input type="text" name="coupon" placeholder=" ">
-          <label>Tem cupom? (opcional)</label>
-        </div>
-
-        <div class="form-actions">
-          <div class="coupon">Valor: <strong>R$ 360</strong></div>
-          <button type="submit" class="btn">Prosseguir para pagamento</button>
-        </div>
-
-      </form>
-    </div>
-  </section>
-</main>
+<form id="bookingForm" data-plan="mensal">
+<input name="name" placeholder="Seu nome" required>
+<input name="whatsapp" placeholder="WhatsApp" required>
+<input type="date" name="date" required>
+<input type="time" name="time" required>
+<button class="btn">Pagar e agendar</button>
+</form>
+</section>
 
 <script src="script.js"></script>
 </body>
