@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luciene Oliveira - Terapia TRG</title>
-
+<title>Luciene Oliveira | Terapia TRG</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -12,11 +11,11 @@
 
 <header>
   <div class="container-flex">
-    <div class="header-left"><span>Luciene Oliveira</span></div>
+    <span class="logo">Luciene Oliveira</span>
 
     <div class="hamburger">☰</div>
 
-    <nav class="desktop-nav">
+    <nav class="menu">
       <a href="#inicio">Início</a>
       <a href="#sobre">Sobre</a>
       <a href="#especializacoes">Especializações</a>
@@ -26,7 +25,6 @@
   </div>
 </header>
 
-<!-- MENU MOBILE -->
 <div class="sidebar">
   <span class="close">×</span>
   <a href="#inicio">Início</a>
@@ -36,35 +34,26 @@
   <a href="#contato">Contato</a>
 </div>
 
-<section id="inicio" class="banner container">
+<section id="inicio" class="banner">
   <div>
     <h1>Transforme sua vida com a TRG</h1>
-    <p>A Terapia de Reprocessamento Generativo ajuda a superar ansiedade, traumas e desequilíbrios emocionais.</p>
-    <a href="#planos" class="btn">Agendar Sessão</a>
+    <p>Terapia emocional com acolhimento, segurança e resultados reais.</p>
+    <a href="#planos" class="btn">Agendar sessão</a>
   </div>
   <img src="imagens/foto1.jpg" alt="Luciene Oliveira">
 </section>
 
-<section id="sobre" class="sobre container">
-  <div>
-    <h2>Sobre a Terapeuta</h2>
-    <p>Sou <strong>Luciene Oliveira</strong>, especialista em Terapia Emocional TRG.</p>
-
-    <div class="grid">
-      <div class="card"><h3>Atendimento</h3><p>Online</p></div>
-      <div class="card"><h3>Duração</h3><p>55 minutos</p></div>
-      <div class="card"><h3>Abordagem</h3><p>TRG</p></div>
-    </div>
-  </div>
-  <img src="imagens/foto2.jpg" alt="">
+<section id="sobre">
+  <h2>Sobre a terapeuta</h2>
+  <p>Sou <strong>Luciene Oliveira</strong>, terapeuta especializada em TRG, ajudando pessoas a superarem ansiedade, traumas e bloqueios emocionais.</p>
 </section>
 
-<section id="especializacoes" class="container">
-  <h2>Áreas de Atuação</h2>
-  <p>Ansiedade, traumas, crises emocionais, bloqueios e mais.</p>
+<section id="especializacoes">
+  <h2>Áreas de atuação</h2>
+  <p>Ansiedade, traumas, depressão, crises emocionais e desenvolvimento pessoal.</p>
 </section>
 
-<section id="planos" class="container">
+<section id="planos">
   <h2>Planos</h2>
 
   <div class="plano">
@@ -73,8 +62,8 @@
       <p>55 minutos</p>
     </div>
     <div>
-      <h2>R$ 120</h2>
-      <a href="plano-individual.html" class="btn">Escolher</a>
+      <strong>R$ 120</strong><br>
+      <a class="btn" href="plano-individual.html">Escolher</a>
     </div>
   </div>
 
@@ -84,24 +73,20 @@
       <p>4 sessões</p>
     </div>
     <div>
-      <h2>R$ 360</h2>
-      <a href="plano-mensal.html" class="btn">Escolher</a>
+      <strong>R$ 360</strong><br>
+      <a class="btn" href="plano-mensal.html">Escolher</a>
     </div>
   </div>
 </section>
 
-<section id="contato" class="container">
+<section id="contato">
   <h2>Contato</h2>
-  <a class="btn" href="https://wa.me/558387149152">WhatsApp</a>
+  <a class="btn" href="https://wa.me/558387149152" target="_blank">WhatsApp</a>
 </section>
 
 <footer>
   © <span id="year"></span> Luciene Oliveira
 </footer>
-
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
 <script src="script.js"></script>
 </body>
