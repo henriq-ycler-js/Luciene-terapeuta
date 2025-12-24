@@ -1,86 +1,43 @@
-// ===============================
-// MENU HAMBURGER (MOBILE)
-// ===============================
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger");
-  const sidebar = document.querySelector(".sidebar");
-  const sidebarClose = document.querySelector(".sidebar .close");
+document.addEventListener("DOMContentLoaded",()=>{
 
-  if (hamburger && sidebar) {
-    hamburger.addEventListener("click", () => {
-      sidebar.classList.add("open");
-    });
+const hamburger=document.querySelector(".hamburger");
+const sidebar=document.querySelector(".sidebar");
+const close=document.querySelector(".close");
 
-    if (sidebarClose) {
-      sidebarClose.addEventListener("click", () => {
-        sidebar.classList.remove("open");
-      });
-    }
+hamburger?.addEventListener("click",()=>sidebar.classList.add("open"));
+close?.addEventListener("click",()=>sidebar.classList.remove("open"));
 
-    // Fecha o menu ao clicar em um link
-    document.querySelectorAll(".sidebar a").forEach(link => {
-      link.addEventListener("click", () => {
-        sidebar.classList.remove("open");
-      });
-    });
-  }
+document.querySelectorAll(".sidebar a").forEach(a=>{
+a.addEventListener("click",()=>sidebar.classList.remove("open"));
+});
 
-  // ===============================
-  // FORMULÁRIO DE AGENDAMENTO
-  // ===============================
-  const form = document.querySelector("#bookingForm");
+const form=document.querySelector("#bookingForm");
 
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+if(form){
+form.addEventListener("submit",async e=>{
+e.preventDefault();
 
-      const data = {
-        plan: form.dataset.plan, // individual | mensal
-        name: form.querySelector('input[name="name"]').value.trim(),
-        whatsapp: form.querySelector('input[name="whatsapp"]').value.trim(),
-        dateISO: form.querySelector('input[name="date"]').value,
-        time: form.querySelector('input[name="time"]').value,
-        coupon: form.querySelector('input[name="coupon"]')
-          ? form.querySelector('input[name="coupon"]').value.trim()
-          : ""
-      };
+const data={
+plan:form.dataset.plan,
+name:form.name.value,
+whatsapp:form.whatsapp.value,
+dateISO:form.date.value,
+time:form.time.value
+};
 
-      // Validação simples
-      if (!data.name || !data.whatsapp || !data.dateISO || !data.time) {
-        alert("Preencha nome, WhatsApp, data e horário.");
-        return;
-      }
+const res=await fetch(
+"https://luciene-backend.onrender.com/create_preference",
+{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify(data)
+}
+);
 
-      try {
-        // 🔗 URL DO SEU BACKEND NO RENDER
-        const response = await fetch(
-          "https://luciene-backend.onrender.com/create_preference",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-          }
-        );
+const json=await res.json();
+if(json.init_point) window.location.href=json.init_point;
+else alert("Erro ao gerar pagamento");
+});
+}
 
-        if (!response.ok) {
-          throw new Error("Erro ao criar preferência de pagamento");
-        }
-
-        const result = await response.json();
-
-        // Redireciona para o Mercado Pago
-        if (result.init_point) {
-          window.location.href = result.init_point;
-        } else {
-          alert("Não foi possível gerar o link de pagamento.");
-        }
-
-      } catch (error) {
-        console.error("Erro:", error);
-        alert("Erro ao gerar pagamento. Tente novamente.");
-      }
-    });
-  }
 });
